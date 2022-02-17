@@ -3,11 +3,13 @@ package ActionClass;
 import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.checkerframework.checker.units.qual.A;
+import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -153,13 +155,51 @@ public class ActionClassMethods {
         1)Navigate to the website :"https://demoqa.com/droppable"
         2)Click Accept
         3)ClickAndHold notAccepted box and release to Drop box
-        4)validate the background is still white and message is still "Drop here"
+        4)validate message is still "Drop here"
         5)ClickAndHold acceptable box and release to Drop box
         6)Validate the  message is "dropped"
         7- Validate the background is blue
+         */
+
+    }
+    @Test
+    public void MoveByOffSet(){
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver= new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/horizontal_slider");
+        driver.manage().window().maximize();
+        WebElement slider = driver.findElement(By.xpath("//input"));
+        Actions actions = new Actions(driver);
+        //x means --> horizontal y means--> vertical
+        actions.clickAndHold(slider).moveByOffset(-30,0).perform();
+
+    }
+    @Test
+    public void sliderShortCut() throws InterruptedException {//this short cut for testing slider
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver= new ChromeDriver();
+        driver.get("https://the-internet.herokuapp.com/horizontal_slider");
+        driver.manage().window().maximize();
+        WebElement slider = driver.findElement(By.xpath("//input"));
+        WebElement range= driver.findElement(By.xpath("//span[@id='range']"));
+        String myrange="3.5";
+        while(!range.getText().trim().equals(myrange)){
+            Thread.sleep(1000);
+            slider.sendKeys(Keys.ARROW_RIGHT);
+        }
+        /*
+        TASK FOR STUDENTS:
+        1)navigate to the Website "https://text-compare.com/"
+        2)Type with the Keys --> "Good Bye Keys"
+        3)with CTRL(COMMAND)+A --> select all text
+        4)Copy this text CTRL(COMMAND) + C --> it will copy the text
+        5)Go to the second box and paste CTRL(COMMAND) + V-->it will paste the text
+        6) Validate this two boxes text are matching
 
          */
+
     }
+
 
 
 }

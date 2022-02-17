@@ -1,5 +1,7 @@
 package Utils;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -29,4 +31,14 @@ public class BrowserUtils {
 
         return element.getText().trim();
     }
+    public static String GetTitleWithJS(WebDriver driver){
+        JavascriptExecutor javascriptExecutor= (JavascriptExecutor) driver;
+        String title= javascriptExecutor.executeScript("return document.title").toString();
+        return title;
+    }
+    public static void ClickWithJS(WebDriver driver,WebElement element){
+        JavascriptExecutor javascriptExecutor= (JavascriptExecutor) driver;
+        javascriptExecutor.executeScript("arguments[0].click()",element);
+    }
+
 }
