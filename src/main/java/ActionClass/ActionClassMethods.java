@@ -4,10 +4,7 @@ import Utils.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.checkerframework.checker.units.qual.A;
 import org.checkerframework.checker.units.qual.C;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -195,8 +192,22 @@ public class ActionClassMethods {
         4)Copy this text CTRL(COMMAND) + C --> it will copy the text
         5)Go to the second box and paste CTRL(COMMAND) + V-->it will paste the text
         6) Validate this two boxes text are matching
-
          */
+    }
+    @Test
+    public void MoveByOffSetPractice(){
+        //TASK
+        //By using move by off set and point class.
+        //Click Contact Us
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver= new ChromeDriver();
+        driver.get("http://www.techtorialacademy.com/");
+        WebElement contactUs=driver.findElement(By.xpath("//div[@class='navigation hidden-xs']//a[.='Contact Us']"));
+        Point coordinatesOfContactUs=contactUs.getLocation();
+        int xCoord=coordinatesOfContactUs.getX();
+        int yCoord=coordinatesOfContactUs.getY();
+        Actions actions = new Actions(driver);
+        actions.moveByOffset(xCoord,yCoord).click().perform();
 
     }
 
