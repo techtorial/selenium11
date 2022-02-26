@@ -69,5 +69,6 @@ public class AlertIntro {
         String actualMessage=BrowserUtils.getTextMethod(message);
         String expectedMessage="You entered: "+name;
         Assert.assertEquals(actualMessage,expectedMessage);
+
     }
 }

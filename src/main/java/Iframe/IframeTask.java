@@ -49,7 +49,7 @@ public class IframeTask {
        driver.switchTo().frame("Frame1");
         WebElement category1= driver.findElement(By.xpath("//a[.='Category1']"));//nosuch element because it is in iframe
         Thread.sleep(2000);
-        category1.click();
+        category1.submit();
         BrowserUtils.switchByTitle(driver,"qavalidation");
         Assert.assertTrue(driver.getTitle().endsWith("qavalidation"));
         Thread.sleep(2000);
