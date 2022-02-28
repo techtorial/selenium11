@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class AdminPage {
 
     public AdminPage(WebDriver driver){
@@ -36,14 +38,28 @@ public class AdminPage {
     @FindBy(className = "addbutton")
     WebElement saveButton;
 
-    public void sendingAllInformationForEmployee(){
+    @FindBy(xpath = "//tr//a[contains(@href,'saveSystemUser')]")
+    List<WebElement> allNames;
+
+
+    public void sendingAllInformationForEmployee() throws InterruptedException {
         addButton.click();
         BrowserUtils.selectBy(userRoles,"Admin","text");
         employeeName.sendKeys("Alice Duval");
-        userName.sendKeys("ahmetBaldirlastone");
+        userName.sendKeys("ahmetnewahmet1546");
         BrowserUtils.selectBy(status,"0","value");
         password.sendKeys("ahmet12345");
         confirmPassword.sendKeys("ahmet12345");
+        Thread.sleep(1000);
         saveButton.click();
+        Thread.sleep(1000);
+    }
+    public boolean ValidationTheEmployeeIsCreated(String Username){
+        for(WebElement name: allNames){
+            if(name.getText().trim().equals(Username)){
+                return true;
+            }
+        }
+        return false;
     }
 }

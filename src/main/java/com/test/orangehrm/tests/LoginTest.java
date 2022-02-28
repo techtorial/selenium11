@@ -35,10 +35,10 @@ public class LoginTest extends TestBase {
 
     @Test
     public void validateLoginNegative2(){
-//        WebDriverManager.chromedriver().setup();
-//        WebDriver driver = new ChromeDriver();
-//        driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login");
-//        driver.manage().window().maximize();
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://opensource-demo.orangehrmlive.com/index.php/auth/login");
+        driver.manage().window().maximize();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("","");
         String actualErrorMessage=loginPage.getErrorMessage();
