@@ -18,6 +18,7 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='txtPassword']")
     WebElement password;
 
+
     @FindBy(id = "btnLogin")
     WebElement loginButton;
 

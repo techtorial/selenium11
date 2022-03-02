@@ -7,7 +7,6 @@ import com.test.orangehrm.pages.PimPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.reporters.jq.Main;
 
 public class PimTest extends TestBase {
     LoginPage loginPage;

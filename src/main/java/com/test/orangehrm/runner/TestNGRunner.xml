@@ -3,8 +3,8 @@
 <suite name="TestNG Runner Practice">
     <test name="Orangehrm Tests">
        <classes>
-           <class name="com.test.orangehrm.tests.LoginTest"> </class>
-           <class name="com.test.orangehrm.tests.AdminTest"> </class>
+<!--           <class name="com.test.orangehrm.tests.LoginTest"> </class>-->
+<!--           <class name="com.test.orangehrm.tests.AdminTest"> </class>-->
            <class name="com.test.orangehrm.tests.PimTest"> </class>
 
        </classes>

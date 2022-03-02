@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Etsy Parameter Practice">
+
+    <test name="Etsy Search Test">
+
+        <parameter name="itemSearch" value="iphone 13 case"> </parameter>
+        <classes>
+
+            <class name="com.test.etsy.tests.EtsyMainTest"> </class>
+
+        </classes>
+    </test>
+
+</suite>
