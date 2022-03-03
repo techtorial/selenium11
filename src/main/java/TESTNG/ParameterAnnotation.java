@@ -9,6 +9,8 @@ public class ParameterAnnotation {
     public void test2(String name){
         System.out.println(name);
     }
+
+
     @Parameters({"City","State"})//if it is more than 1
     @Test(priority = 2,invocationTimeOut = 2000)//it will wait for 2 sec then fail
     public void test1(String city,String state){

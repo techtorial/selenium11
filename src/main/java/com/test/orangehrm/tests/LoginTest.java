@@ -1,5 +1,6 @@
 package com.test.orangehrm.tests;
 
+import Utils.ConfigReader;
 import com.test.orangehrm.TestBase;
 import com.test.orangehrm.pages.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -13,7 +14,7 @@ public class LoginTest extends TestBase {
     @Test
     public void validateLoginPositive(){
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("Admin","admin123");
+        loginPage.login(ConfigReader.readProperty("orangehrmusername"),ConfigReader.readProperty("orangehrmpassword"));
         Assert.assertEquals(driver.getCurrentUrl(),"https://opensource-demo.orangehrmlive.com/index.php/dashboard");
     }
 

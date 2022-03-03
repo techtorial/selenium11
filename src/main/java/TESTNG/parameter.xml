@@ -5,8 +5,9 @@
     <test name="Parameter Test">
 
         <parameter name="FirstName" value="Ahmet"> </parameter>
-        <parameter name="City" value="Istanbul"> </parameter>
         <parameter name="State" value="Kiev"> </parameter>
+        <parameter name="City" value="Istanbul"> </parameter>
+
         <classes>
 
             <class name="TESTNG.ParameterAnnotation"> </class>
