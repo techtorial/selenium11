@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.sql.Time;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class DriverHelper {
     //private variable
@@ -36,7 +38,8 @@ public class DriverHelper {
             }
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();//for fresh start(testing)
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            //your driver will wait max 5 sec
 
         }
         return driver;

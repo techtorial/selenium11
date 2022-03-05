@@ -14,6 +14,7 @@ public class AdminPage {
         PageFactory.initElements(driver,this);
     }
 
+
     @FindBy(id = "btnAdd")
     WebElement addButton;
 
@@ -41,6 +42,15 @@ public class AdminPage {
     @FindBy(xpath = "//tr//a[contains(@href,'saveSystemUser')]")
     List<WebElement> allNames;
 
+    @FindBy(id = "searchSystemUser_userType")
+    WebElement userRoleBox;
+
+    @FindBy(id = "searchBtn")
+    WebElement searchBox;
+
+    @FindBy(xpath = "//td[3]")
+    List<WebElement> alltheRolesOnTheTable;
+
 
     public void sendingAllInformationForEmployee() throws InterruptedException {
         addButton.click();
@@ -61,5 +71,20 @@ public class AdminPage {
             }
         }
         return false;
+    }
+    public void selectUserRole(String roleName,WebDriver driver){
+        BrowserUtils.selectBy(userRoleBox,roleName,"text");
+        BrowserUtils.ClickWithJS(driver,searchBox);
+    }
+
+
+    public boolean validateRoleText(String roleName){
+
+        for(WebElement role:alltheRolesOnTheTable){
+            if(!role.getText().trim().equals(roleName)){
+                return false;
+            }
+        }
+        return true;
     }
 }
