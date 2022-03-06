@@ -30,10 +30,7 @@ public class LoginTest extends TestBase {
       //  LoginPage loginPage = new LoginPage(driver);//admin123
         loginPage.login(username,password);//correct username but wrong password
         Assert.assertEquals(loginPage.getErrorMessage(),expectedMessage);
-    }
-      //2 more negative scenarious (wrong username, correct password
-                                    // (wrong username,wrong password
-    //
+        }
 
 //    @Test
 //    public void validateLoginNegative2(){

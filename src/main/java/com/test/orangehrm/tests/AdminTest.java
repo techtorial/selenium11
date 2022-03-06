@@ -22,7 +22,7 @@ public class AdminTest extends TestBase {
          adminPage = new AdminPage(driver);
     }
 
-    @Test
+    @Test()
     public void validateTheCreationOfEmployeeMessage() throws InterruptedException {
         LoginPage loginPage=new LoginPage(driver);
         loginPage.login("Admin","admin123");
@@ -31,8 +31,6 @@ public class AdminTest extends TestBase {
        // AdminPage adminPage = new AdminPage(driver);
         adminPage.sendingAllInformationForEmployee();
         Assert.assertTrue(adminPage.ValidationTheEmployeeIsCreated("ahmetnewahmet1546"));
-        Alert alert= driver.switchTo().alert();
-        alert.accept();
     }
     @Test(dataProvider = "UserRoles",dataProviderClass = DataForLoginNegativeTest.class)
     public void ValidateTheSelectRoleFunctions(String roleName){
@@ -41,7 +39,7 @@ public class AdminTest extends TestBase {
         MainPage mainPage=new MainPage(driver);
         mainPage.clickAdminButton();
         AdminPage adminPage=new AdminPage(driver);
-        adminPage.selectUserRole(roleName,driver);
+        adminPage.selectUserRole(roleName,driver);//Admin //ESS
         Assert.assertTrue(adminPage.validateRoleText(roleName));
     }
 

@@ -38,7 +38,7 @@ public class DriverHelper {
             }
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();//for fresh start(testing)
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
             //your driver will wait max 5 sec
 
         }
