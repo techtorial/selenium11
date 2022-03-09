@@ -30,6 +30,7 @@ public class FluentlyWait {
         WebElement message=fluentWait.until(mydriver->driver.findElement(By.xpath("//p[@id='message']")));
         System.out.println(message.getText().trim());
         Assert.assertEquals(message.getText().trim(),"It's gone!");
+
     }
 
 }

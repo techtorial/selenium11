@@ -16,6 +16,7 @@ public class TestBase {
     @BeforeMethod
     public void setup(){
         driver=DriverHelper.getDriver();
+        driver.get(ConfigReader.readProperty("facebookurl"));
         driver.get(ConfigReader.readProperty("urlorangehrm"));
     }
 

@@ -1,5 +1,6 @@
 package com.test.etsy;
 
+import Utils.ConfigReader;
 import Utils.DriverHelper;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
