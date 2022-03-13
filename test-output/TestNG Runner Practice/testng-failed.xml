@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [TestNG Runner Practice]">
+  <test thread-count="5" name="Orangehrm Tests(failed)">
+    <classes>
+      <class name="com.test.orangehrm.tests.PimTest">
+        <methods>
+          <include name="ValidatePersonalDetailElement"/>
+          <include name="initiliazingPages"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- com.test.orangehrm.tests.PimTest -->
+    </classes>
+  </test> <!-- Orangehrm Tests(failed) -->
+</suite> <!-- Failed suite [TestNG Runner Practice] -->

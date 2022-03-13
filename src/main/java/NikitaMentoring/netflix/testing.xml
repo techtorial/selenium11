@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test name="TestNetflix">
+
+        <parameter name="email" value="testEmail"></parameter>
+        <parameter name="pass" value="testPassword"></parameter>
+        <parameter name="test" value="This one is just for test"></parameter>
+        <classes>
+            <class name="NikitaMentoring.netflix.loginParameter"/>
+        </classes>
+    </test> <!-- Test -->
+</suite>
